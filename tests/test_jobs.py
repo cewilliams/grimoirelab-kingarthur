@@ -541,7 +541,7 @@ class TestExecuteJob(TestBaseRQ):
         }
         archive_args = {}
 
-        q = rq.Queue('queue', async=False)  # noqa: W606
+        q = rq.Queue('queue', is_async=False)  # noqa: W606
 
         job = q.enqueue(execute_perceval_job,
                         backend='git', backend_args=backend_args, category='commit',
